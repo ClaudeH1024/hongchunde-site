@@ -1,11 +1,1113 @@
 <!doctype html>
-<html>
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
-  <title>My Resume</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>洪春德 — 跨境出海运营</title>
+  <meta name="description" content="洪春德的个人简历与作品集 — 七年跨境出海经验，日语系背景，技术驱动的运营实践者">
+  <style>
+    /* ===== Reset & Variables ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #faf9f6;
+      --card: #ffffff;
+      --text: #1a1a1a;
+      --text-muted: #6b6b6b;
+      --text-light: #999999;
+      --accent: #2c5f5b;
+      --accent-light: #e8f2f0;
+      --accent-glow: rgba(44, 95, 91, 0.08);
+      --border: #e8e5df;
+      --line: #d9d5cc;
+      --warm: #f5f1eb;
+      --radius: 6px;
+      --serif: "Songti SC", "STSong", "Noto Serif SC", "SimSun", "YuMincho", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ===== Typography ===== */
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: 0.04em;
+      color: var(--text);
+    }
+
+    h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 3rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    h2 .en {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    h3 {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+
+    p { color: var(--text-muted); }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color var(--transition);
+      position: relative;
+    }
+
+    a:hover { color: #1a3f3c; }
+
+    /* ===== Layout ===== */
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 6rem 0;
+      position: relative;
+    }
+
+    /* ===== Navigation Dots ===== */
+    .nav-dots {
+      position: fixed;
+      right: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .nav-dots a {
+      display: block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--line);
+      transition: all var(--transition);
+      text-indent: -9999px;
+      overflow: hidden;
+    }
+
+    .nav-dots a:hover,
+    .nav-dots a.active {
+      background: var(--accent);
+      transform: scale(1.4);
+    }
+
+    /* ===== Hero ===== */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, #3a3a4a 0%, #5a5a6a 30%, #4a4a5a 60%, #2a2a3a 100%);
+      background-size: cover;
+      background-position: center top;
+      z-index: 0;
+      /* 替换为照片: background-image: url('your-photo.jpg'); */
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.05) 100%),
+        linear-gradient(to right, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0) 55%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: clamp(2rem, 5vw, 4rem);
+      max-width: 560px;
+    }
+
+    .hero-name {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: 0.04em;
+      color: #ffffff;
+    }
+
+    .hero-subtitle {
+      font-family: var(--sans);
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.8);
+      margin-top: 1.25rem;
+      max-width: 480px;
+      line-height: 1.9;
+    }
+
+    .hero-tags {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-tag {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      padding: 0.35rem 0.9rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 100px;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.04em;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      background: rgba(255,255,255,0.08);
+      transition: background var(--transition), border-color var(--transition);
+    }
+
+    .hero-tag:hover {
+      background: rgba(255,255,255,0.16);
+      border-color: rgba(255,255,255,0.5);
+    }
+
+    /* ===== About ===== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-stat {
+      display: flex;
+      gap: 1rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-stat-num {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+      min-width: 3rem;
+    }
+
+    .about-stat-label {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .about-stat-value {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .about-quote {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: var(--text);
+      padding-left: 1.5rem;
+      border-left: 3px solid var(--accent);
+    }
+
+    /* ===== Timeline ===== */
+    .timeline {
+      position: relative;
+      padding: 1rem 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--line);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 1fr 40px 1fr;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 4rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .timeline-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .timeline-item:nth-child(even) .timeline-card { order: 3; }
+    .timeline-item:nth-child(even) .timeline-dot { order: 2; }
+    .timeline-item:nth-child(even) .timeline-date { order: 1; text-align: right; }
+
+    .timeline-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    .timeline-card:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+
+    .timeline-company {
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-title {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-location {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-bottom: 0.75rem;
+    }
+
+    .timeline-desc {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+
+    .timeline-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid var(--bg);
+      margin: 0.6rem auto 0;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 0 0 4px var(--accent-light);
+    }
+
+    .timeline-date {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+      padding-top: 0.55rem;
+    }
+
+    /* ===== Career ===== */
+    .priority-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .priority-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+      position: relative;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    .priority-card:hover {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+      transform: translateY(-2px);
+    }
+
+    .priority-card.featured {
+      border-color: var(--accent);
+      background: linear-gradient(160deg, var(--card) 0%, var(--accent-light) 100%);
+    }
+
+    .priority-rank {
+      font-family: var(--serif);
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--border);
+      line-height: 1;
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      pointer-events: none;
+    }
+
+    .priority-card.featured .priority-rank { color: rgba(44, 95, 91, 0.2); }
+
+    .priority-label {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.6rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .priority-desc {
+      font-size: 0.85rem;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+
+    .career-note {
+      margin-top: 2.5rem;
+      padding: 1.5rem 1.75rem;
+      background: var(--accent-light);
+      border-radius: var(--radius);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .career-note strong { color: var(--text); }
+
+    /* ===== Skills ===== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .skill-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem 1.75rem;
+    }
+
+    .skill-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .skill-card h3 { margin-bottom: 0.75rem; }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1rem;
+    }
+
+    .skill-tag {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.7rem;
+      background: var(--warm);
+      border-radius: 100px;
+      color: var(--text-muted);
+    }
+
+    /* ===== Fitness Chart ===== */
+    .chart-wrapper {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-top: 0.5rem;
+      position: relative;
+    }
+
+    .chart-stats {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .chart-stat-num {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .chart-stat-label {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      letter-spacing: 0.06em;
+    }
+
+    .chart-note {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 0;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3rem;
+      color: var(--text-muted);
+      transition: color var(--transition);
+    }
+
+    .footer-link:hover { color: var(--accent); }
+
+    .footer-link-icon {
+      font-size: 1.3rem;
+    }
+
+    .footer-link-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .footer-copy {
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    /* ===== Animations ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .nav-dots { display: none; }
+
+      section { padding: 4rem 0; }
+
+      #hero {
+        min-height: 100vh;
+        justify-content: center;
+        align-items: flex-end;
+      }
+
+      .hero-overlay {
+        background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.05) 60%);
+      }
+
+      .hero-content {
+        padding: 2rem 1.25rem 2.5rem;
+        max-width: 100%;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .timeline::before { left: 1.5rem; }
+
+      .timeline-item {
+        grid-template-columns: 30px 1fr;
+        gap: 1rem;
+      }
+
+      .timeline-item:nth-child(even) .timeline-card { order: 3; }
+      .timeline-item:nth-child(even) .timeline-dot { order: 2; }
+      .timeline-item:nth-child(even) .timeline-date { order: 1; text-align: left; }
+
+      .timeline-item .timeline-card { order: 3; }
+      .timeline-item .timeline-dot { order: 2; }
+      .timeline-item .timeline-date { order: 1; }
+
+      .timeline-date {
+        grid-column: 1 / -1;
+        padding-left: calc(30px + 1rem);
+        padding-top: 0;
+        margin-bottom: 0.3rem;
+      }
+
+      .timeline-dot { margin: 0.3rem auto 0; }
+
+      .priority-list,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .chart-stats { flex-direction: column; gap: 0.75rem; }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .timeline::before { left: 2rem; }
+
+      .timeline-item {
+        grid-template-columns: 50px 1fr;
+        gap: 1.5rem;
+      }
+
+      .timeline-item .timeline-card { order: 3; }
+      .timeline-item .timeline-dot { order: 2; }
+      .timeline-item .timeline-date { order: 1; }
+
+      .timeline-item:nth-child(even) .timeline-card { order: 3; }
+      .timeline-item:nth-child(even) .timeline-dot { order: 2; }
+      .timeline-item:nth-child(even) .timeline-date { order: 1; text-align: left; }
+
+      .timeline-date {
+        grid-column: 1 / -1;
+        padding-left: calc(50px + 1.5rem);
+        padding-top: 0;
+        margin-bottom: 0.3rem;
+      }
+
+      .priority-list,
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .skills-grid .skill-card:last-child {
+        grid-column: 1 / -1;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello, I'm Hongchunde</h1>
-  <p>This is my portfolio site.</p>
+
+<!-- Navigation dots -->
+<nav class="nav-dots" aria-label="页面导航">
+  <a href="#hero" class="active" data-section="hero">首页</a>
+  <a href="#about" data-section="about">关于</a>
+  <a href="#experience" data-section="experience">经历</a>
+  <a href="#career" data-section="career">求职</a>
+  <a href="#skills" data-section="skills">能力</a>
+</nav>
+
+<main>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-bg" role="img" aria-label="个人职业照"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <h1 class="hero-name">洪春德</h1>
+      <p class="hero-subtitle">
+        日语系背景，七年跨境出海经验。<br>
+        从业务专员到独立站操盘手，技术驱动的运营实践者。
+      </p>
+      <div class="hero-tags">
+        <span class="hero-tag">跨境电商</span>
+        <span class="hero-tag">独立站运营</span>
+        <span class="hero-tag">日语 N2</span>
+        <span class="hero-tag">Google 广告</span>
+        <span class="hero-tag">Python</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2>
+        关于我
+        <span class="en">About</span>
+      </h2>
+      <div class="about-grid">
+        <div>
+          <p class="about-quote">
+            相信数据而非直觉，<br>追求长期价值而非短期红利。
+          </p>
+          <p style="margin-top:1.5rem;">
+            泉州人，INTJ，2018 年毕业于莆田学院日语系。七年来深耕日本市场，从传统外贸到平台电商再到独立站，在跨境电商的每个关键环节都留下了实践足迹。
+          </p>
+          <p style="margin-top:1rem;">
+            2025 年底选择主动停下，用一段时间系统梳理过往、学习新知。这段空白不是断裂，而是为下一个阶段蓄力的转折。
+          </p>
+        </div>
+        <div>
+          <div class="about-stat">
+            <div class="about-stat-num">7<small style="font-size:0.8rem;">年</small></div>
+            <div>
+              <div class="about-stat-label">Experience</div>
+              <div class="about-stat-value">跨境出海从业经验</div>
+            </div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">3</div>
+            <div>
+              <div class="about-stat-label">Platforms</div>
+              <div class="about-stat-value">Amazon / Shopify / TikTok</div>
+            </div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">2</div>
+            <div>
+              <div class="about-stat-label">Languages</div>
+              <div class="about-stat-value">日语 N2 / 英语 CET-4</div>
+            </div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num" style="color:#c4704a;">-11<small style="font-size:0.8rem;">kg</small></div>
+            <div>
+              <div class="about-stat-label">Fitness Journey</div>
+              <div class="about-stat-value">一年减重 & 体脂率下降 10%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="container">
+      <h2>
+        工作经历
+        <span class="en">Experience</span>
+      </h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-company">华映科技股份有限公司</div>
+            <div class="timeline-title">业务专员</div>
+            <div class="timeline-location">福州 · 马尾</div>
+            <p class="timeline-desc">
+              负责日本市场相关业务，接待日本客户、介绍产品并对接需求。同时担任日籍上司助理，处理日常业务事务，锻炼了跨文化沟通和商务应对能力。
+            </p>
+          </div>
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-date">2018.01 — 2018.11</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-company">达芬奇贸易有限公司</div>
+            <div class="timeline-title">日本亚马逊运营</div>
+            <div class="timeline-location">莆田</div>
+            <p class="timeline-desc">
+              负责 3C 类目产品的亚马逊日本站运营，涵盖产品上架、Listing 优化、FBA 库存管理及站内广告投放。这段经历建立了电商平台运营的系统认知。
+            </p>
+          </div>
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-date">2018.12 — 2019.05</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-company">潜渊家居工作室</div>
+            <div class="timeline-title">日本亚马逊运营 / 独立站负责人</div>
+            <div class="timeline-location">福州 · 上街</div>
+            <p class="timeline-desc">
+              负责家居产品及服饰箱包品类的亚马逊日本站运营。期间从零搭建 Shopify 独立站，负责产品上架、社交媒体运营、客户对接及 Google 广告投放。独立站项目让我自学了 SEO、内容营销和付费广告投放，虽然受限于预算，但这些探索让我发现了真正的兴趣所在。
+            </p>
+          </div>
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-date">2020.05 — 2025.11</div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <div class="timeline-company">职业调整期</div>
+            <div class="timeline-title">休整 · 学习 · 蓄力</div>
+            <p class="timeline-desc">
+              离职后没有急于投入下一份工作，而是用这段时间系统梳理五年的独立站与平台运营经验，同时精进编程技能，为下一个阶段的跨界尝试做准备。
+            </p>
+          </div>
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-date">2025.11 — 至今</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Career -->
+  <section id="career">
+    <div class="container">
+      <h2>
+        求职意向
+        <span class="en">Career Focus</span>
+      </h2>
+
+      <p style="max-width:600px;margin-bottom:1rem;">
+        继续深耕跨境出海方向。过往经历都在日本市场，但希望拓展到更广阔的欧美或东南亚市场。除电商运营外，社交媒体运营与 Google 广告投放等细分方向也愿意尝试。
+      </p>
+
+      <p class="eyebrow" style="margin-top:2.5rem;">Platform Preference</p>
+
+      <div class="priority-list">
+        <div class="priority-card featured">
+          <div class="priority-rank">01</div>
+          <div class="priority-label">独立站</div>
+          <p class="priority-desc">
+            首选方向。自由度更高，流量获取是挑战也是乐趣。有 Shopify 建站与运营实战经验，对 SEO、内容营销、广告投放持续投入学习。
+          </p>
+        </div>
+
+        <div class="priority-card">
+          <div class="priority-rank">02</div>
+          <div class="priority-label">非货架电商 · TikTok</div>
+          <p class="priority-desc">
+            内容驱动型平台，增长空间大。相比货架电商，更看好内容电商的长期趋势。愿意从零开始，将过往运营经验迁移到新平台。
+          </p>
+        </div>
+
+        <div class="priority-card">
+          <div class="priority-rank">03</div>
+          <div class="priority-label">货架电商 · Amazon</div>
+          <p class="priority-desc">
+            成熟稳定，有五年亚马逊日本站运营经验。如果产品本身有硬实力，货架电商依然是稳健的选择。
+          </p>
+        </div>
+      </div>
+
+      <div class="career-note">
+        <strong>也关注这些方向：</strong>社交媒体运营 / Google 广告投放 / 跨境品牌内容营销。独立站运营期间，越接触流量获取和内容创作，越发现这才是我真正有热情的方向。
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2>
+        能力与兴趣
+        <span class="en">Skills &amp; Interests</span>
+      </h2>
+
+      <div class="skills-grid">
+        <div class="skill-card fade-in">
+          <div class="skill-icon" aria-hidden="true">&#x1F1EF;&#x1F1F5;</div>
+          <h3>语言能力</h3>
+          <p style="font-size:0.9rem;line-height:1.8;">
+            日语 N2 证书，听说读写熟练，可作为工作语言。过往工作中日语使用频率最高，与日本客户及上司无障碍沟通。
+          </p>
+          <p style="font-size:0.9rem;line-height:1.8;margin-top:0.75rem;">
+            英语 CET-4，日常交流没问题。个人兴趣上英语使用反而更多——常读英文原版书，不为别的，有些书翻译实在太烂，或者干脆没有中文版。
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">日语 N2</span>
+            <span class="skill-tag">英语 CET-4</span>
+            <span class="skill-tag">商务沟通</span>
+          </div>
+        </div>
+
+        <div class="skill-card fade-in">
+          <div class="skill-icon" aria-hidden="true">&lt;/&gt;</div>
+          <h3>技术能力</h3>
+          <p style="font-size:0.9rem;line-height:1.8;">
+            会写点代码，会用 Git。起初是因为工作中机械性操作太多，被迫开始学 Python 写脚本。没想到 AI 时代到来后，原先懂一点代码比完全不懂还是强不少。
+          </p>
+          <p style="font-size:0.9rem;line-height:1.8;margin-top:0.75rem;">
+            能搭建和维护 Shopify 独立站，理解 SEO 基本原理，会用 AI 工具提升工作效率。这个网站本身也是能力的佐证。
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Shopify</span>
+            <span class="skill-tag">AI Tools</span>
+            <span class="skill-tag">HTML/CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-card fade-in">
+          <div class="skill-icon" aria-hidden="true">&#x1F4AA;</div>
+          <h3>健身与自律</h3>
+          <p style="font-size:0.9rem;line-height:1.8;">
+            胖了三十年，决定往后的人生有个健康的身体。2025 年 6 月开始系统性自学健身和营养学知识，8 月起将训练和饮食控制同时执行。
+          </p>
+          <p style="font-size:0.9rem;line-height:1.8;margin-top:0.75rem;">
+            健身不仅仅是身体的变化，更是一种可迁移的自我管理能力——设定目标、制定计划、持续执行、用数据追踪结果。
+          </p>
+          <div class="skill-tags">
+            <span class="skill-tag">力量训练</span>
+            <span class="skill-tag">营养学</span>
+            <span class="skill-tag">数据追踪</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fitness Chart -->
+      <div class="chart-wrapper fade-in" style="margin-top:1.5rem;">
+        <div class="chart-stats">
+          <div>
+            <div class="chart-stat-num">-11<small style="font-size:0.9rem;"> kg</small></div>
+            <div class="chart-stat-label">体重下降</div>
+          </div>
+          <div>
+            <div class="chart-stat-num">-10<small style="font-size:0.9rem;">%</small></div>
+            <div class="chart-stat-label">体脂率下降</div>
+          </div>
+          <div>
+            <div class="chart-stat-num">10<small style="font-size:0.9rem;"> 个月</small></div>
+            <div class="chart-stat-label">持续执行</div>
+          </div>
+        </div>
+        <canvas id="fitnessChart" height="320" aria-label="体重与体脂率变化趋势图" role="img"></canvas>
+        <p class="chart-note">* 以上为示意数据，实际趋势与之一致。详细数据可提供 Excel / 训记 / 苹果健康导出。</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-links">
+      <a href="https://github.com/hongchunde" class="footer-link" target="_blank" rel="noopener">
+        <span class="footer-link-icon">&#x2B24;</span>
+        <span class="footer-link-label">GitHub</span>
+      </a>
+      <a href="https://www.douban.com/people/hongchunde" class="footer-link" target="_blank" rel="noopener">
+        <span class="footer-link-icon">&#x25A0;</span>
+        <span class="footer-link-label">Douban</span>
+      </a>
+      <a href="mailto:hongchunde@example.com" class="footer-link">
+        <span class="footer-link-icon">@</span>
+        <span class="footer-link-label">Email</span>
+      </a>
+    </div>
+    <p class="footer-copy">Built by 洪春德 &copy; 2026</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script>
+  // ===== Intersection Observer for scroll animations =====
+  const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.fade-in, .timeline-item').forEach(el => {
+    observer.observe(el);
+  });
+
+  // ===== Active nav dot tracking =====
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-dots a');
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.dataset.section === id);
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+
+  sections.forEach(s => sectionObserver.observe(s));
+
+  // ===== Fitness Chart =====
+  const ctx = document.getElementById('fitnessChart');
+  if (ctx) {
+    const months = ['6月','7月','8月','9月','10月','11月','12月','1月','2月','3月','4月','5月'];
+    const weightData = [85, 84.5, 83, 81.5, 79.5, 78, 77, 76, 75.5, 75, 74.5, 74];
+    const fatData = [28, 27.5, 26, 25, 23.5, 22, 21, 20, 19.5, 19, 18.5, 18];
+
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: months,
+        datasets: [
+          {
+            label: '体重 (kg)',
+            data: weightData,
+            borderColor: '#2c5f5b',
+            backgroundColor: 'rgba(44, 95, 91, 0.06)',
+            borderWidth: 2.5,
+            fill: true,
+            tension: 0.35,
+            pointRadius: 4,
+            pointBackgroundColor: '#2c5f5b',
+            pointBorderColor: '#fff',
+            pointBorderWidth: 2,
+            pointHoverRadius: 6,
+            yAxisID: 'y',
+          },
+          {
+            label: '体脂率 (%)',
+            data: fatData,
+            borderColor: '#c4704a',
+            backgroundColor: 'rgba(196, 112, 74, 0.05)',
+            borderWidth: 2.5,
+            fill: true,
+            tension: 0.35,
+            pointRadius: 4,
+            pointBackgroundColor: '#c4704a',
+            pointBorderColor: '#fff',
+            pointBorderWidth: 2,
+            pointHoverRadius: 6,
+            yAxisID: 'y1',
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        interaction: {
+          mode: 'index',
+          intersect: false,
+        },
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: {
+              usePointStyle: true,
+              pointStyleWidth: 8,
+              padding: 24,
+              font: { family: '-apple-system, "PingFang SC", sans-serif', size: 13 },
+              color: '#6b6b6b',
+            }
+          },
+          tooltip: {
+            backgroundColor: '#1a1a1a',
+            titleFont: { family: '-apple-system, "PingFang SC", sans-serif' },
+            bodyFont: { family: '-apple-system, "PingFang SC", sans-serif' },
+            cornerRadius: 4,
+            padding: 12,
+          }
+        },
+        scales: {
+          x: {
+            grid: { display: false },
+            ticks: {
+              font: { family: '-apple-system, "PingFang SC", sans-serif', size: 12 },
+              color: '#999',
+            }
+          },
+          y: {
+            type: 'linear',
+            display: true,
+            position: 'left',
+            title: {
+              display: true,
+              text: '体重 (kg)',
+              font: { family: '-apple-system, "PingFang SC", sans-serif', size: 12 },
+              color: '#2c5f5b',
+            },
+            grid: { color: '#f0ede8' },
+            ticks: {
+              font: { family: '-apple-system, "PingFang SC", sans-serif', size: 12 },
+              color: '#999',
+            },
+            min: 70,
+            max: 88,
+          },
+          y1: {
+            type: 'linear',
+            display: true,
+            position: 'right',
+            title: {
+              display: true,
+              text: '体脂率 (%)',
+              font: { family: '-apple-system, "PingFang SC", sans-serif', size: 12 },
+              color: '#c4704a',
+            },
+            grid: { drawOnChartArea: false },
+            ticks: {
+              font: { family: '-apple-system, "PingFang SC", sans-serif', size: 12 },
+              color: '#999',
+            },
+            min: 14,
+            max: 32,
+          }
+        }
+      }
+    });
+  }
+</script>
+
 </body>
 </html>

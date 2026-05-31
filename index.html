@@ -205,18 +205,19 @@
 
     .about-stat {
       display: flex;
-      gap: 1rem;
-      padding: 1.25rem 0;
+      gap: 1.25rem;
+      padding: 1.5rem 0;
       border-bottom: 1px solid var(--border);
     }
 
     .about-stat-num {
       font-family: var(--serif);
-      font-size: 2rem;
+      font-size: 2.5rem;
       font-weight: 700;
       color: var(--accent);
       line-height: 1;
-      min-width: 3rem;
+      width: 5rem;
+      flex-shrink: 0;
     }
 
     .about-stat-label {
@@ -478,6 +479,17 @@
       letter-spacing: 0.06em;
     }
 
+    .charts-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .chart-box {
+      position: relative;
+      height: 300px;
+    }
+
     .chart-note {
       font-size: 0.75rem;
       color: var(--text-light);
@@ -593,6 +605,8 @@
       }
 
       .chart-stats { flex-direction: column; gap: 0.75rem; }
+
+      .charts-row { grid-template-columns: 1fr; }
     }
 
     @media (min-width: 769px) and (max-width: 1024px) {
@@ -670,9 +684,6 @@
           <p style="margin-top:1.5rem;">
             泉州人，INTJ，2018 年毕业于莆田学院日语系。七年来深耕日本市场，从传统外贸到平台电商再到独立站，在跨境电商的每个关键环节都留下了实践足迹。
           </p>
-          <p style="margin-top:1rem;">
-            2025 年底选择主动停下，用一段时间系统梳理过往、学习新知。这段空白不是断裂，而是为下一个阶段蓄力的转折。
-          </p>
         </div>
         <div>
           <div class="about-stat">
@@ -683,24 +694,24 @@
             </div>
           </div>
           <div class="about-stat">
-            <div class="about-stat-num">3</div>
+            <div class="about-stat-num">3<small style="font-size:0.8rem;">个</small></div>
             <div>
               <div class="about-stat-label">Platforms</div>
               <div class="about-stat-value">Amazon / Shopify / TikTok</div>
             </div>
           </div>
           <div class="about-stat">
-            <div class="about-stat-num">2</div>
+            <div class="about-stat-num">2<small style="font-size:0.8rem;">种</small></div>
             <div>
               <div class="about-stat-label">Languages</div>
-              <div class="about-stat-value">日语 N2 / 英语 CET-4</div>
+              <div class="about-stat-value">日语 N2 / 英语</div>
             </div>
           </div>
           <div class="about-stat">
             <div class="about-stat-num" style="color:#c4704a;">-11<small style="font-size:0.8rem;">kg</small></div>
             <div>
               <div class="about-stat-label">Fitness Journey</div>
-              <div class="about-stat-value">一年减重 & 体脂率下降 10%</div>
+              <div class="about-stat-value">半年减重 11kg & 体脂率下降 10%</div>
             </div>
           </div>
         </div>
@@ -835,11 +846,11 @@
             日语 N2 证书，听说读写熟练，可作为工作语言。过往工作中日语使用频率最高，与日本客户及上司无障碍沟通。
           </p>
           <p style="font-size:0.9rem;line-height:1.8;margin-top:0.75rem;">
-            英语 CET-4，日常交流没问题。个人兴趣上英语使用反而更多——常读英文原版书，不为别的，有些书翻译实在太烂，或者干脆没有中文版。
+            英语可作日常及工作沟通（约 CET-4 水平），在个人兴趣上使用反而更多——常读英文原版书，不为别的，有些书翻译实在太烂，或者干脆没有中文版。
           </p>
           <div class="skill-tags">
             <span class="skill-tag">日语 N2</span>
-            <span class="skill-tag">英语 CET-4</span>
+            <span class="skill-tag">英语</span>
             <span class="skill-tag">商务沟通</span>
           </div>
         </div>
@@ -884,19 +895,26 @@
         <div class="chart-stats">
           <div>
             <div class="chart-stat-num">-11<small style="font-size:0.9rem;"> kg</small></div>
-            <div class="chart-stat-label">体重下降</div>
+            <div class="chart-stat-label">体重下降（79.5 → 68.1）</div>
           </div>
           <div>
             <div class="chart-stat-num">-10<small style="font-size:0.9rem;">%</small></div>
-            <div class="chart-stat-label">体脂率下降</div>
+            <div class="chart-stat-label">体脂率下降（28.8% → 18.4%）</div>
           </div>
           <div>
-            <div class="chart-stat-num">10<small style="font-size:0.9rem;"> 个月</small></div>
-            <div class="chart-stat-label">持续执行</div>
+            <div class="chart-stat-num">-17.5<small style="font-size:0.9rem;"> cm</small></div>
+            <div class="chart-stat-label">腰围减少（96 → 78.5）</div>
           </div>
         </div>
-        <canvas id="fitnessChart" height="320" aria-label="体重与体脂率变化趋势图" role="img"></canvas>
-        <p class="chart-note">* 以上为示意数据，实际趋势与之一致。详细数据可提供 Excel / 训记 / 苹果健康导出。</p>
+        <div class="charts-row">
+          <div class="chart-box">
+            <canvas id="weightChart" aria-label="体重变化趋势图" role="img"></canvas>
+          </div>
+          <div class="chart-box">
+            <canvas id="fatChart" aria-label="体脂率变化趋势图" role="img"></canvas>
+          </div>
+        </div>
+        <p class="chart-note">数据来源：训记 / 苹果健康。2025 年 6 月起控制饮食（79.5kg），8 月起加入训练。</p>
       </div>
     </div>
   </section>
@@ -957,124 +975,75 @@
 
   sections.forEach(s => sectionObserver.observe(s));
 
-  // ===== Fitness Chart =====
-  const ctx = document.getElementById('fitnessChart');
-  if (ctx) {
-    const months = ['6月','7月','8月','9月','10月','11月','12月','1月','2月','3月','4月','5月'];
-    const weightData = [85, 84.5, 83, 81.5, 79.5, 78, 77, 76, 75.5, 75, 74.5, 74];
-    const fatData = [28, 27.5, 26, 25, 23.5, 22, 21, 20, 19.5, 19, 18.5, 18];
+  // ===== Fitness Charts =====
+  const labels = ['6/1','7/1','8/19','8/24','8/31','9/7','9/14','9/21','9/28','10/12','10/19','10/26','11/2','11/9','11/16','11/23','11/30','12/7','12/14','12/21','12/28','1/4','1/11','1/18','1/25','2/1','2/8','2/25','3/1','3/8','3/15','3/22','3/29','4/5','4/12','4/19','4/26','5/1','5/5','5/10','5/17','5/24','5/31'];
+  const weightData = [79.5,77.5,76.6,76.2,75.3,75.7,74.3,73.6,72.7,72.6,73.1,72.6,71.7,72.4,71.7,72.0,72.4,70.3,69.9,69.8,68.7,68.7,68.7,69.5,68.8,68.7,68.9,69.5,69.5,69.8,68.6,68.2,69.8,69.4,69.8,69.6,69.4,70.0,69.2,68.9,69.1,69.2,68.1];
+  const fatData = [null,null,26.7,25.3,25.2,23.3,23.9,23.1,22.3,23.5,22.3,21.9,21.8,21.1,21.5,22.2,20.5,23.5,21.9,22.4,23.7,22.2,21.9,22.1,23.1,22.4,22.3,22.0,22.3,23.2,22.1,21.7,23.1,20.3,19.8,19.9,19.9,19.5,20.3,20.3,18.7,19.1,18.4];
 
+  function makeChart(canvasId, label, unit, data, color, bgColor, yMin, yMax, spanGaps) {
+    const ctx = document.getElementById(canvasId);
+    if (!ctx) return;
     new Chart(ctx, {
       type: 'line',
       data: {
-        labels: months,
-        datasets: [
-          {
-            label: '体重 (kg)',
-            data: weightData,
-            borderColor: '#2c5f5b',
-            backgroundColor: 'rgba(44, 95, 91, 0.06)',
-            borderWidth: 2.5,
-            fill: true,
-            tension: 0.35,
-            pointRadius: 4,
-            pointBackgroundColor: '#2c5f5b',
-            pointBorderColor: '#fff',
-            pointBorderWidth: 2,
-            pointHoverRadius: 6,
-            yAxisID: 'y',
-          },
-          {
-            label: '体脂率 (%)',
-            data: fatData,
-            borderColor: '#c4704a',
-            backgroundColor: 'rgba(196, 112, 74, 0.05)',
-            borderWidth: 2.5,
-            fill: true,
-            tension: 0.35,
-            pointRadius: 4,
-            pointBackgroundColor: '#c4704a',
-            pointBorderColor: '#fff',
-            pointBorderWidth: 2,
-            pointHoverRadius: 6,
-            yAxisID: 'y1',
-          }
-        ]
+        labels,
+        datasets: [{
+          label, data,
+          unit,
+          borderColor: color,
+          backgroundColor: bgColor,
+          borderWidth: 2.5,
+          fill: true,
+          tension: 0.3,
+          pointRadius: 1.5,
+          pointBackgroundColor: color,
+          pointHoverRadius: 5,
+          spanGaps,
+        }]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        interaction: {
-          mode: 'index',
-          intersect: false,
-        },
         plugins: {
-          legend: {
-            position: 'bottom',
-            labels: {
-              usePointStyle: true,
-              pointStyleWidth: 8,
-              padding: 24,
-              font: { family: '-apple-system, "PingFang SC", sans-serif', size: 13 },
-              color: '#6b6b6b',
-            }
-          },
+          legend: { display: false },
           tooltip: {
             backgroundColor: '#1a1a1a',
             titleFont: { family: '-apple-system, "PingFang SC", sans-serif' },
             bodyFont: { family: '-apple-system, "PingFang SC", sans-serif' },
             cornerRadius: 4,
             padding: 12,
+            callbacks: {
+              label: (ctx) => ctx.parsed.y !== null ? `${label}: ${ctx.parsed.y}${unit}` : '暂无数据',
+            }
           }
         },
         scales: {
           x: {
             grid: { display: false },
             ticks: {
-              font: { family: '-apple-system, "PingFang SC", sans-serif', size: 12 },
+              font: { family: '-apple-system, "PingFang SC", sans-serif', size: 11 },
               color: '#999',
+              maxTicksLimit: 10,
+              autoSkip: true,
             }
           },
           y: {
-            type: 'linear',
-            display: true,
-            position: 'left',
-            title: {
-              display: true,
-              text: '体重 (kg)',
-              font: { family: '-apple-system, "PingFang SC", sans-serif', size: 12 },
-              color: '#2c5f5b',
-            },
             grid: { color: '#f0ede8' },
+            min: yMin,
+            max: yMax,
             ticks: {
               font: { family: '-apple-system, "PingFang SC", sans-serif', size: 12 },
               color: '#999',
-            },
-            min: 70,
-            max: 88,
-          },
-          y1: {
-            type: 'linear',
-            display: true,
-            position: 'right',
-            title: {
-              display: true,
-              text: '体脂率 (%)',
-              font: { family: '-apple-system, "PingFang SC", sans-serif', size: 12 },
-              color: '#c4704a',
-            },
-            grid: { drawOnChartArea: false },
-            ticks: {
-              font: { family: '-apple-system, "PingFang SC", sans-serif', size: 12 },
-              color: '#999',
-            },
-            min: 14,
-            max: 32,
+              callback: (v) => v + unit,
+            }
           }
         }
       }
     });
   }
+
+  makeChart('weightChart', '体重', ' kg', weightData, '#2c5f5b', 'rgba(44,95,91,0.08)', 65, 82, false);
+  makeChart('fatChart', '体脂率', '%', fatData, '#c4704a', 'rgba(196,112,74,0.08)', 16, 30, true);
 </script>
 
 </body>
